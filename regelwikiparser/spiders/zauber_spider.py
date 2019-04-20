@@ -20,7 +20,7 @@ class Magic(CrawlSpider):
         class_info = json.load(json_data)
 
     def start_requests(self):
-        for spell_class, data in self.class_info.iteritems():
+        for spell_class, data in self.class_info.items():
             if data['active'] is 1:
                 logging.info("Parsing links of " + spell_class)
                 request = Request(self.base_url + data['link'],
