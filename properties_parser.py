@@ -51,7 +51,6 @@ class PropertiesParser(object):
         
         for op in cleanup_operations:
             text = re.sub(op, "", text, 0, re.U)
-            publication = re.sub(op, "", publication, 0, re.U)
 
         return (text, publication)
 
@@ -185,8 +184,9 @@ class PropertiesParser(object):
             content_selector = selector.xpath(extension_content_query)
             titles = title_selector.extract()
             contents = content_selector.extract()
-            if len(titles) >= 2 and len(contents) >= 2:
-                for i in range(0, 3):
+            minLen = min(len(titles), len(contents))
+            if minLen > 0:
+                for i in range(0, minLen):
                     spell_extensions[i] = (titles[i][1:], contents[i])
             else:
                 logging.warning("No Spell extensions found!")
