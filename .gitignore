@@ -8,7 +8,6 @@ log.txt
 # Sublime Files
 dsa5spellbook.sublime-project
 dsa5spellbook.sublime-workspace
+
 dbs/default.db
-.vs/slnx.sqlite
-.vs/VSWorkspaceState.json
-.vs/ProjectSettings.json
+.vs/
