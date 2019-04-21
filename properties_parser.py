@@ -16,8 +16,12 @@ class PropertiesParser(object):
         replace_operations = [
             r"</?div( \w+\=\".+?\")?>",
             r"</?span( \w+\=\".+?\")?>",
-            r"<p>\s*</p>",
+            r"<p>\s*<\/p>",
             r"<h1>(.*)</h1>"
+        ]
+        cleanup_operations = [
+            r"\\n",
+            r"\n"
         ]
         for op in replace_operations:
             text = re.sub(op, "", text, 0, re.U)
@@ -44,6 +48,10 @@ class PropertiesParser(object):
             end_rx += key + r"|"
         end_rx += end_keywords[-1] + r")(.|\n)*"
         text = re.sub(end_rx, "", text, 0, re.U)
+        
+        for op in cleanup_operations:
+            text = re.sub(op, "", text, 0, re.U)
+            publication = re.sub(op, "", publication, 0, re.U)
 
         return (text, publication)
 
@@ -59,8 +67,21 @@ class PropertiesParser(object):
             r"^((<p>)?\s*((</?p>)|(</?br>)))+",
             r"((<p>)?\s*((</?p>)|(</?br>)))+$"
         ]
+            
+        cleanup_ops = [
+            r"\\n",
+            r"\n",
+            r"<(.*)>"
+        ]
+
         for rx in prop_operations:
             prop = re.sub(rx, "", prop, 0, re.U)
+
+        for clOp in cleanup_ops:
+            prop = re.sub(clOp, "", prop, 0, re.U)        
+
+        logging.debug("prop: " + prop)
+        
         return prop
 
     def parseByText(self, selector, item):
