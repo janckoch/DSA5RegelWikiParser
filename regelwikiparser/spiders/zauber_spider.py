@@ -32,9 +32,7 @@ class Magic(CrawlSpider):
         """Generator to create new requests of the start requests."""
 
         # The x path query to get all links inside the navigation of the site
-        xpath_mod_nav = "//*[@id='sub_header']//" + \
-            "nav[contains(@class,'mod_navigation')]//" + \
-            "a[@class='ulSubMenu']/@href"
+        xpath_mod_nav = "//div[contains(@class,'ulSubMenuRTable-cell')]//a[@class='ulSubMenu']/@href"
         hxs = Selector(response=response, type="html")
 
         # generate the requests from the selector
