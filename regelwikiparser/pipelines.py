@@ -11,7 +11,7 @@ class JsonWithEncodingPipeline(object):
             self.file, encoding='utf-8', ensure_ascii=False)
         self.exporter.start_exporting()
 
-    def spider_closed(self, spider):
+    def close_spider(self, spider):
         self.exporter.finish_exporting()
         self.file.close()
 
