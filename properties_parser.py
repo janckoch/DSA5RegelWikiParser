@@ -77,10 +77,12 @@ class PropertiesParser(object):
         for rx in prop_operations:
             prop = re.sub(rx, "", prop, 0, re.U)
 
+        # remove last bits of html junk
         for clOp in cleanup_ops:
-            prop = re.sub(clOp, "", prop, 0, re.U)        
+            prop = re.sub(clOp, "", prop, 0, re.U)
 
-        logging.debug("prop: " + prop)
+        # remove trailing whitespaces
+        prop = prop.rstrip()
         
         return prop
 
