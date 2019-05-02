@@ -59,6 +59,7 @@ class PropertiesParser(object):
         for key in properties[:-1]:
             prop_rx += key + r"|"
         prop_rx += properties[-1] + r")\s*"
+        logging.warning("Property regex:" + prop_rx)
         return prop_rx
 
     def filterProp(self, prop):
@@ -149,6 +150,11 @@ class PropertiesParser(object):
         # Merkmal default cases
         if "Merkmal" not in item["properties"]:
             item["properties"]["Merkmal"] = "Keines"
+    
+    def parseAbility(self, selector, item):
+        """parse the properties of an ability and returns it as a dict"""
+
+        self.parseByText(selector, item)
 
     def parseKarmaExtensions(self, selector, item):
         """parse the karma extensions of a liturgy and returns it as a dict"""

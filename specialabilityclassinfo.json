@@ -1,0 +1,306 @@
+{
+  "Allgemein": {
+    "link": "sf_allgemeine_sonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Befehl": {
+    "link": "Befehls_SF.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "ErweiterterKampfstil": {
+    "link": "SF_Erweitertekampfstilsonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert",
+      "Kampftechniken",
+      "Erschwernis"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Kampf": {
+    "link": "sf_kampfsonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert",
+      "Erschwernis",
+      "Kampftechniken"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Kampfstile": {
+    "link": "SF_Kampfstilsonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert",
+      "Erweiterte Kampfsonderfertigkeiten",
+      "Kampftechniken"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Prügel": {
+    "link": "SF_Pruegelsonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert",
+      "Kampftechniken"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Schicksal": {
+    "link": "SF_Schick.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Karmal": {
+    "link": "SF_karmal.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "KarmalErweitert": {
+    "link": "SF_ErweiterteLST.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "KarmaleTraditionen": {
+    "link": "fdfdfdg.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Liturgiestile": {
+    "link": "SF_Liturgiestilsonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Predigten": {
+    "link": "SF_Predigt.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Visionen": {
+    "link": "SF_Vision.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Ahnenzeichen": {
+    "link": "Ahnenzeichen.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "AlhanischeZauberzeichen": {
+    "link": "mSF-AlhanischeZauberzeichen.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Magisch": {
+    "link": "SF_Magie.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "BannSchutzkreise": {
+    "link": "bannundschutz.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "MagischErweitert": {
+    "link": "ErweiterteZaubersonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Herrschaftsrituale": {
+    "link": "herituel.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "LykanthropischeGaben": {
+    "link": "lykanthropische-gaben.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "MagischeTraditionen": {
+    "link": "dsfdsfdsfdsfdsfds.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Feenpakt": {
+    "link": "Feenpakt.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "SikaryanRaub": {
+    "link": "sikaryan-raub-sonderfertigkeiten.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "DruidenStile": {
+    "link": "druiden-5736.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "ElfenStile": {
+    "link": "elfen.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "MagierStile": {
+    "link": "gildenmagier.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "HexenStile": {
+    "link": "hexen.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  }
+}

@@ -21,3 +21,9 @@ class KarmaItem(Item):
     link = Field()
     properties = Field()
     karmaextensions = Field()
+
+class SpecialAbilityItem(Item):
+    abilityclass = Field()
+    name = Field()
+    link = Field()
+    properties = Field()
