@@ -1,5 +1,6 @@
 import re
 import logging
+from bs4 import BeautifulSoup
 
 
 class PropertiesParser(object):
@@ -59,7 +60,6 @@ class PropertiesParser(object):
         for key in properties[:-1]:
             prop_rx += key + r"|"
         prop_rx += properties[-1] + r")\s*"
-        logging.warning("Property regex:" + prop_rx)
         return prop_rx
 
     def filterProp(self, prop):
@@ -183,17 +183,14 @@ class PropertiesParser(object):
         spell_extensions = {}
 
         if self.info['extension'] is 1:
-            extension_content_query = ".//em[contains(.,'#')]/" + \
-                "following-sibling::text()[1]"
-            extension_title_query = ".//em/text()[contains(.,'#')]"
-            title_selector = selector.xpath(extension_title_query)
-            content_selector = selector.xpath(extension_content_query)
-            titles = title_selector.extract()
+            extension_query = ".//p[contains(.,'#')]"
+            content_selector = selector.xpath(extension_query)
             contents = content_selector.extract()
-            minLen = min(len(titles), len(contents))
-            if minLen > 0:
-                for i in range(0, minLen):
-                    spell_extensions[i] = (titles[i][1:], contents[i])
+            conLen = len(contents)
+            if conLen > 0:
+                for i in range(0, conLen):
+                    soup = BeautifulSoup(contents[i])
+                    spell_extensions[i] = soup.get_text()
             else:
                 logging.warning("No Spell extensions found!")
 

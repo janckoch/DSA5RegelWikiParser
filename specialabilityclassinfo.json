@@ -307,5 +307,137 @@
     ],
     "active": 1,
     "pre-text": 0
+  },
+  "Kesselzauber": {
+    "link": "HK_Kesselzauber.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Bannschwertzauber": {
+    "link": "Bannsch.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Dolchrituale": {
+    "link": "drituale.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Gewandzauber": {
+    "link": "hhGewandzauber.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Gildenmagische Kugelzauber": {
+    "link": "KZ_Magierkugel.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Instrumentzauber": {
+    "link": "frfInstrumentzauber.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Kappenzauber": {
+    "link": "KPZ_Kappenzauber.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Schalenzauber": {
+    "link": "SAZ_Schalenzauber.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Scharlatanische Kugelzauber": {
+    "link": "KZ_Zauberkugel.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Spielzeugzauber": {
+    "link": "SPZ_Spielzeugzauber.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Stabzauber": {
+    "link": "SSF_Stabzauber.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
+  },
+  "Steckenzauber": {
+    "link": "Steckenzaub.html",
+    "properties": [
+      "Regel",
+      "Voraussetzung",
+      "Voraussetzungen",
+      "AP-Wert"
+    ],
+    "active": 1,
+    "pre-text": 0
   }
 }
