@@ -18,7 +18,8 @@ class PropertiesParser(object):
             r"</?div( \w+\=\".+?\")?>",
             r"</?span( \w+\=\".+?\")?>",
             r"<p>\s*<\/p>",
-            r"<h1>(.*)</h1>"
+            r"<h1>(.*)</h1>",
+            r"<br>"
         ]
         cleanup_operations = [
             r"\\n",
@@ -32,7 +33,7 @@ class PropertiesParser(object):
         text = re.sub(str_rx, r"\1: ", text, 0, re.U)
 
         # parse the Publikation
-        pub_rx = r"(<p>)?.*Publikation:\s?([\w\d ]+).*(</p>)?"
+        pub_rx = r"(<p>)?.*Publikation?((|e|n|))*:\s?([\w\d ]+).*(</p>)?"
         m = re.search(pub_rx, text, re.U)
         if m is not None:
             publication = m.group(2)
@@ -49,7 +50,7 @@ class PropertiesParser(object):
             end_rx += key + r"|"
         end_rx += end_keywords[-1] + r")(.|\n)*"
         text = re.sub(end_rx, "", text, 0, re.U)
-        
+
         for op in cleanup_operations:
             text = re.sub(op, "", text, 0, re.U)
 
@@ -67,7 +68,7 @@ class PropertiesParser(object):
             r"^((<p>)?\s*((</?p>)|(</?br>)))+",
             r"((<p>)?\s*((</?p>)|(</?br>)))+$"
         ]
-            
+
         cleanup_ops = [
             r"\\n",
             r"\n",
@@ -83,7 +84,7 @@ class PropertiesParser(object):
 
         # remove trailing whitespaces
         prop = prop.rstrip()
-        
+
         return prop
 
     def parseByText(self, selector, item):
@@ -93,15 +94,13 @@ class PropertiesParser(object):
         # create a or regex of all properties
         prop_rx = self.createPropRegEx(props)
 
+        for sel in selector.extract():
+            (sel, pub) = self.filterPropertiesText(sel, prop_rx)
+            if pub is not None:
+                spell_properties["Publikation"] = pub
+
         # get the text of the selector
         text = selector.extract_first()
-        # text = unicode(text, "utf-8")
-        # use unicode fag everywhere! (re.U (Unicode) flag)
-
-        # filter unnessary html format stuff
-        (text, pub) = self.filterPropertiesText(text, prop_rx)
-        spell_properties["Publikation"] = pub
-
         prop_rx += r": "
 
         # find the existing properties
@@ -150,7 +149,7 @@ class PropertiesParser(object):
         # Merkmal default cases
         if "Merkmal" not in item["properties"]:
             item["properties"]["Merkmal"] = "Keines"
-    
+
     def parseAbility(self, selector, item):
         """parse the properties of an ability and returns it as a dict"""
 
