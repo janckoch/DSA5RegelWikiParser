@@ -31,14 +31,6 @@ class PropertiesParser(object):
         str_rx = r"\s*<strong>\s*" + prop_rx + r":?\s*</strong>\s*:?\s*"
         text = re.sub(str_rx, r"\1: ", text, 0, re.U)
 
-        # parse the Publikation
-        pub_rx = r"(<p>)?.*Publikation:\s?([\w\d ]+).*(</p>)?"
-        m = re.search(pub_rx, text, re.U)
-        if m is not None:
-            publication = m.group(2)
-        else:
-            publication = None
-
         # filter out end keywords
         end_keywords = [
             r"Zaubererweiterungen",
@@ -49,11 +41,11 @@ class PropertiesParser(object):
             end_rx += key + r"|"
         end_rx += end_keywords[-1] + r")(.|\n)*"
         text = re.sub(end_rx, "", text, 0, re.U)
-        
+
         for op in cleanup_operations:
             text = re.sub(op, "", text, 0, re.U)
 
-        return (text, publication)
+        return text
 
     def createPropRegEx(self, properties):
         prop_rx = r"("
@@ -67,7 +59,7 @@ class PropertiesParser(object):
             r"^((<p>)?\s*((</?p>)|(</?br>)))+",
             r"((<p>)?\s*((</?p>)|(</?br>)))+$"
         ]
-            
+
         cleanup_ops = [
             r"\\n",
             r"\n",
@@ -83,7 +75,7 @@ class PropertiesParser(object):
 
         # remove trailing whitespaces
         prop = prop.rstrip()
-        
+
         return prop
 
     def parseByText(self, selector, item):
@@ -99,8 +91,10 @@ class PropertiesParser(object):
         # use unicode fag everywhere! (re.U (Unicode) flag)
 
         # filter unnessary html format stuff
-        (text, pub) = self.filterPropertiesText(text, prop_rx)
-        spell_properties["Publikation"] = pub
+        text = self.filterPropertiesText(text, prop_rx)
+
+        # parse the publication form all available selectors
+        spell_properties["Publikation"] = self.parsePublication(selector)
 
         prop_rx += r": "
 
@@ -150,7 +144,7 @@ class PropertiesParser(object):
         # Merkmal default cases
         if "Merkmal" not in item["properties"]:
             item["properties"]["Merkmal"] = "Keines"
-    
+
     def parseAbility(self, selector, item):
         """parse the properties of an ability and returns it as a dict"""
 
@@ -195,6 +189,17 @@ class PropertiesParser(object):
                 logging.warning("No Spell extensions found!")
 
         item['spellextensions'] = spell_extensions
+
+    def parsePublication(self, selector):
+        """parse the publication and returns it as a string"""
+        content_selector = selector.xpath('//div[contains(@class, "ce_text")]')
+        content = content_selector.re(
+            r"Publikation?[(|e|n|)]*:\s?(<[^>]*>)*\s?([\w\d, ]+)")
+        if not content:
+            logging.warning("No publication found!")
+            return None
+        else:
+            return content[-1]
 
     def parseName(self, selector, item):
         """tries to parse the name of spell and returns it as a string"""
